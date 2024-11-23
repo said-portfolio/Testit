@@ -1,11 +1,6 @@
 <template>
   <div>
-    <h1>User List</h1>
-    <ul>
-      <li v-for="user in users" :key="user.id">
-        {{ user.name }} ({{ user.email }})
-      </li>
-    </ul>
+    <TestRequest />
     <div v-if="error" class="error">{{ error }}</div>
   </div>
 </template>
@@ -14,6 +9,8 @@
 import { ref, onMounted } from "vue";
 import { ApiService } from "@/services/ApiService";
 import type { User } from "@/models/User";
+
+import TestRequest from "@/components/TestRequest.vue"
 
 const users = ref<User[]>([]);
 const error = ref<string | null>(null);
